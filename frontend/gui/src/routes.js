@@ -3,13 +3,12 @@ import {Route} from 'react-router-dom';
 import ArticleList from './container/ArticleListView';
 import ArticleDetail from './container/ArticleDetailView'
 
-const BaseRouter = () => {
-    return(
+const BaseRouter = () => (
         <div>
-            <Route extact path = '/' component ={ArticleList} />
-            <Route extact path = '/:aritcleID' component ={ArticleDetail} />
+            <Route extact path = '/home' component ={ArticleList} />
+            <Route extact path = '/:articleID' component ={ArticleDetail} />
         </div>
-    )
-}
+    );  
+
 
 export default BaseRouter;

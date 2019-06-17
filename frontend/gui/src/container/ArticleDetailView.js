@@ -11,15 +11,16 @@ class ArticleDetail extends React.Component {
 
     componentDidMount() {
         const articleID = this.props.match.params.articleID
+        console.log(articleID)
         axios.get(`http://127.0.0.1:8000/api/${articleID}`)
         .then(res=>{
             this.setState({
                 article: res.data
             });
-            console.log(res.data);
         })
     }
     render() {
+        console.log("ArticleDetail")
         return (
             <Card title = {this.state.article.title}>
                 <p>{this.state.article.content}</p> 
