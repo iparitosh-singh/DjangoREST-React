@@ -5,8 +5,8 @@ import ArticleDetail from './container/ArticleDetailView'
 
 const BaseRouter = () => (
         <div>
-            <Route extact path = '/home' component ={ArticleList} />
-            <Route extact path = '/:articleID' component ={ArticleDetail} />
+            <Route exact path = "/" component ={ArticleList} />
+            <Route exact path = '/:articleID' component ={ArticleDetail} />
         </div>
     );  
 
