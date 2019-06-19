@@ -3,28 +3,25 @@ import { Form, Input, Button } from 'antd';
 import axios from 'axios'
 
 class CustomForm extends React.Component {
-    handleFormSubmit = (event, requestType, articleID) =>{
-        const title = event.target.elements.title.value
-        const content = event.target.elements.content.value
-        switch(requestType){
+    handleFormSubmit = (event, requestType, articleID) => {
+        const title = event.target.elements.title.value;
+        const content = event.target.elements.content.value;
+
+        switch ( requestType ) {
             case 'post':
-                return axios.post('http://127.0.0.1:8000/api/',{
-                    title :title,
-                    content : content
+                return axios.post('http://127.0.0.1:8000/api/', {
+                    title: title,
+                    content: content
                 })
                 .then(res => console.log(res))
-                .catch(err => console.err(err)
-                )
+                .catch(error => console.err(error));
             case 'put':
-                return axios.put(`http:://127.0.0.1:8000/api/${articleID}/`,{
-                    title :title,
-                    content : content
+                return axios.put(`http://127.0.0.1:8000/api/${articleID}/`, {
+                    title: title,
+                    content: content
                 })
                 .then(res => console.log(res))
-                .catch(err => console.err(err)
-                )
-            default:
-                return console.log("hello")
+                .catch(error => console.err(error));
         }
     }
 
