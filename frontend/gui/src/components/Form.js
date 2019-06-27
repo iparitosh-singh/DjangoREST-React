@@ -22,6 +22,8 @@ class CustomForm extends React.Component {
                 })
                 .then(res => console.log(res))
                 .catch(error => console.err(error));
+            default:
+                return null
         }
     }
 
